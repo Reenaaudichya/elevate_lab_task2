@@ -1,0 +1,32 @@
+Delivered-To: target-user@example.com
+Received: by 2002:a05:6a10:3333:: with SMTP id b15csp3027849xga;
+        Wed, 1 Jul 2026 03:35:22 -0700 (PDT)
+X-Google-Smtp-Source: AGHTbYEv9XzKmNlk8OpwXq4YF92jK2z
+X-Received: by 2002:a17:902:c59d:c0:2dd:93cf:9900 with SMTP id y13mr45690322kba.33.1719830122211;
+        Wed, 01 Jul 2026 03:35:22 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1719830122; cv=none;
+        d=google.com; s=arc20160816;
+        b=M9eL3n0qYyN25k
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc20160816;
+        h=content-transfer-encoding:mime-version:subject:message-id:to:from:date;
+        bh=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=;
+        b=m8YzQr2n
+Return-Path: <security-alert@secure-google-alert-login.com>
+Received: from mail.secure-google-alert-login.com (mail.secure-google-alert-login.com. [198.51.100.88])
+        by mx.google.com with ESMTPS id h11si4039213kbo.155.2026.07.01.03.35.21
+        for <target-user@example.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 01 Jul 2026 03:35:22 -0700 (PDT)
+Received-SPF: fail (google.com: domain of security-alert@secure-google-alert-login.com does not designate 198.51.100.88 as authorized responder) client-ip=198.51.100.88;
+Authentication-Results: mx.google.com;
+       spf=fail (google.com: domain of secure-google-alert-login.com does not designate 198.51.100.88 as authorized responder) smtp.mailfrom=security-alert@secure-google-alert-login.com;
+       dkim=fail (signature verification failed) header.i=@google.com;
+       dmarc=fail (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+From: Google Accounts Security <no-reply@secure-google-alert-login.com>
+To: target-user@example.com
+Subject: CRITICAL: Unauthorized login attempt blocked from Russia - Action Required!
+Date: Wed, 01 Jul 2026 16:05:00 +0530
+Message-ID: <0200018f4b9c5d-8e1a2b3c-4d5e-6f7a-8b9c-d0e1f2a3b4c5@secure-google-alert-login.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
